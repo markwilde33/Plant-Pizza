@@ -5,9 +5,33 @@
 /* Brand styles */
 
 .brand {
-    background: #cbb09c !important;
+    background: #1e4e75c0 !important;
 }
 
 .brand-text {
-    color: #cbb09c !important;
+    color: #32c2cce5 !important;
 }
+
+/* Form styles */
+
+form{
+    max-width: 680px;
+    margin: 10px auto;
+    padding: 30px;
+}
+
+/* Button styles */
+
+.submit-btn{
+    padding-top: 15px;
+}
+
+input.btn:hover {
+    background-color: rgba(235, 227, 124, 0.966) !important;
+}
+
+/* Link styles */
+
+nav ul li a:hover{
+    background-color: rgba(235, 227, 124, 0.966) !important;
+ }
