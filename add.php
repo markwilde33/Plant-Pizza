@@ -1,5 +1,5 @@
 <?php 
-
+   
 	$email = $title = $ingredients = '';
 	$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
