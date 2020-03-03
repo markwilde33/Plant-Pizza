@@ -29,11 +29,11 @@
 	
 	<?php include('templates/header.php'); ?>
     <div class="container center">
-    <h2 class="center">Details Page</h2> 
+    <h2 class="center"> Pizza Details Page</h2> 
     <?php if($pizza): ?>
 
         <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
-        <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['email']); ?></p>
+        <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
         <p><?php echo date($pizza['created_at']); ?></p>
         <h5>Ingredients:</h5>
         <ul>

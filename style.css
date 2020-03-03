@@ -46,10 +46,15 @@ nav ul li a:hover{
     background-color: #32c2cce5;
     color: white;
     text-align: center;
+    
   }
 
 /* Card styles */
 
    .card-content {
     min-height: 220px;
+  }
+
+  .container{
+      padding-bottom: 100px;
   }

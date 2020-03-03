@@ -3,8 +3,8 @@
 	 // connect to the database
 	 include('config/db_connect.php');
 
-	$email = $title = $ingredients = '';
-	$errors = array('email' => '', 'title' => '', 'ingredients' => '');
+	$email = $username = $title = $ingredients = '';
+	$errors = array('email' => '', 'username' => '', 'title' => '', 'ingredients' => '');
 
 	if(isset($_POST['submit'])){
 		
@@ -17,7 +17,15 @@
 				$errors['email'] = 'Email must be a valid email address';
 			}
 		}
-
+		// check name
+		if(empty($_POST['username'])){
+			$errors['username'] = 'A name is required';
+		} else{
+			$username = $_POST['name'];
+			if(!preg_match('/^[a-zA-Z\s]+$/', $username)){
+				$errors['username'] = 'Name must be letters and spaces only';
+			}
+		}
 		// check title
 		if(empty($_POST['title'])){
 			$errors['title'] = 'A title is required';
@@ -27,7 +35,6 @@
 				$errors['title'] = 'Title must be letters and spaces only';
 			}
 		}
-
 		// check ingredients
 		if(empty($_POST['ingredients'])){
 			$errors['ingredients'] = 'At least one ingredient is required';
@@ -41,11 +48,12 @@
 		if(array_filter($errors)){
 		} else {
 			$email = mysqli_real_escape_string($conn, $_POST['email']);
+			$name = mysqli_real_escape_string($conn, $_POST['name']);
 			$title = mysqli_real_escape_string($conn, $_POST['title']);
 			$ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
 
 			// create sql
-			$sql = "INSERT INTO pizzas(email,title,ingredients) VALUES('$email','$title','$ingredients')";
+			$sql = "INSERT INTO pizzas(email,title,ingredients,username,) VALUES('$email','$title','$ingredients','$username')";
 			// save to db and check
 			if(mysqli_query($conn, $sql)){
 				// success
@@ -70,6 +78,9 @@
 			<label>Your Email</label>
 			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
 			<div class="red-text"><?php echo $errors['email']; ?></div>
+			<label>Your Name</label>
+			<input type="text" name="username" value="<?php echo htmlspecialchars($name) ?>">
+			<div class="red-text"><?php echo $errors['username']; ?></div>
 			<label>Pizza Title</label>
 			<input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>">
 			<div class="red-text"><?php echo $errors['title']; ?></div>
