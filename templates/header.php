@@ -10,9 +10,9 @@
 <body class="grey lighten-4">
 	<nav class="white z-depth-0">
     <div class="container">
-      <strong><a href="#" class="left brand-logo brand-text">Plant Pizza</a></strong>
+      <strong><a href="index.php" class="left brand-logo brand-text">Plant Pizza</a></strong>
       <ul id="nav-mobile" class="right ">
-        <li><a href="#" class="btn brand z-depth-0">Add a Pizza</a></li>
+        <li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
       </ul>
     </div>
   </nav>

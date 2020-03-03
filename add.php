@@ -1,5 +1,8 @@
 <?php 
    
+	 // connect to the database
+	 include 'config/db_connect.php';
+
 	$email = $title = $ingredients = '';
 	$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
