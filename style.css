@@ -9,7 +9,7 @@
 }
 
 .brand-text {
-    color: #32c2cce5 !important;
+    color: #498a8fe5 !important;
 }
 
 /* Form styles */
@@ -27,13 +27,13 @@ form{
 }
 
 input.btn:hover {
-    background-color: rgba(235, 227, 124, 0.966) !important;
+    background-color: rgb(134, 183, 196) !important;
 }
 
 /* Link styles */
 
 nav ul li a:hover{
-    background-color: rgba(235, 227, 124, 0.966) !important;
+    background-color: rgb(134, 183, 196) !important;
  }
 
 /* Footer styles */
@@ -43,7 +43,7 @@ nav ul li a:hover{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #32c2cce5;
+    background-color: #498a8fe5;
     color: white;
     text-align: center;
     
@@ -57,4 +57,25 @@ nav ul li a:hover{
 
   .container{
       padding-bottom: 100px;
+  }
+
+/* Heading styles */
+
+  .pizza-details{
+   color: #498a8fe5;
+  }
+
+  .title-style{
+      color: rgb(134, 183, 196);
+  }
+/* Button styles*/
+
+  .btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #498a8fe5 !important;
+  }
+
+  .btn:hover {
+background-color: rgb(134, 183, 196) !important;
   }

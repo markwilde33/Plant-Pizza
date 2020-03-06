@@ -24,7 +24,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<h4 class="center green-text">Plant Pizzas!</h4>
+	<h4 class="center title-style"> <strong>Plant Powered Pizza</strong></h4> 
 
 	<div class="container">
 		<div class="row">
@@ -44,7 +44,7 @@
                             </ul>
 						</div>
 						<div class="card-action right-align">
-							<a class="brand-text" href="details.php?id=<?php echo $pizza['id'] ?>">more info</a>
+							<a class="btn" href="details.php?id=<?php echo $pizza['id'] ?>">more info</a>
 						</div>
 					</div>
 				</div>

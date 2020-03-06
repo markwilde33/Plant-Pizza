@@ -29,7 +29,7 @@
 	
 	<?php include('templates/header.php'); ?>
     <div class="container center">
-    <h2 class="center"> Pizza Details Page</h2> 
+    <h4 class="center pizza-details"> <strong> Pizza Details Page</strong></h4> 
     <?php if($pizza): ?>
 
         <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
