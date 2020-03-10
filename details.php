@@ -2,6 +2,24 @@
   
     // connect to the database
     include('config/db_connect.php');
+
+    if(isset($_POST['delete'])){
+
+        // retrieve the id from the database
+        $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
+
+        // make sql query
+        $sql = "DELETE FROM pizzas WHERE id = $id_to_delete";
+
+        if(mysqli_query($conn, $sql)){
+          // success
+          header('Location: index.php');
+        } else {
+          //failure
+          echo 'query error: ' . mysqli_error($conn);
+        }
+
+    }
     
     //check Get request id parameter
     if(isset($_GET['id'])){
@@ -32,20 +50,26 @@
     <h4 class="center pizza-details head-pad"> <strong> Pizza Details Page</strong></h4> 
     <?php if($pizza): ?>
       <div class="card z-depth-0">
-				<div class="card-content center">
-          <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
-          <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
-         <p><?php echo date($pizza['created_at']); ?></p>
-         <h5>Ingredients:</h5>
-         <ul>
-           <?php foreach(explode(',', $pizza['ingredients']) as $ing):?>
-            <li>
-             <?php echo htmlspecialchars($ing); ?> 
-            </li>
-           <?php endforeach; ?>
-         </ul>             
-        </div>
-    </div>
+			 <div class="card-content center">
+        <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
+        <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
+        <p><?php echo date($pizza['created_at']); ?></p>
+        <h5>Ingredients:</h5>
+        <ul>
+          <?php foreach(explode(',', $pizza['ingredients']) as $ing):?>
+          <li>
+           <?php echo htmlspecialchars($ing); ?> 
+          </li>
+          <?php endforeach; ?>
+        </ul>             
+       </div>
+      </div>
+
+      <!-- Delete Form -->
+      <form action="details.php" method="POST">
+        <input type="hidden" name="id_to_delete" value="<?php echo $pizza['id'] ?>">
+        <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
+      </form>
        
     <?php else: ?>
        <h4><strong>Pizza not found, when you know better, do better</strong></h4>
