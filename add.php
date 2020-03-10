@@ -45,8 +45,8 @@
 			}
 		}
         // redirect if no errors
-		if(array_filter($errors)){
-		} else {
+		if(!array_filter($errors)){
+		
 			$email = mysqli_real_escape_string($conn, $_POST['email']);
 			$username = mysqli_real_escape_string($conn, $_POST['username']);
 			$title = mysqli_real_escape_string($conn, $_POST['title']);
@@ -73,7 +73,7 @@
 	<?php include('templates/header.php'); ?>
 
 	<section class="container grey-text">
-		<h4 class="center">Add a Pizza</h4>
+		<h4 class="center head-pad">Add a Pizza</h4>
 		<form class="white" action="add.php" method="POST">
 			<label>Your Email</label>
 			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
@@ -88,7 +88,7 @@
 			<input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>">
 			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
 			<div class="center">
-				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
+				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0 submit-btn">
 			</div>
 		</form>
 	</section>

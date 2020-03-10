@@ -23,7 +23,7 @@ form{
 /* Button styles */
 
 .submit-btn{
-    padding-top: 15px;
+    margin-top: 15px;
 }
 
 input.btn:hover {
@@ -46,7 +46,6 @@ nav ul li a:hover{
     background-color: #498a8fe5;
     color: white;
     text-align: center;
-    
   }
 
 /* Card styles */
@@ -65,8 +64,12 @@ nav ul li a:hover{
    color: #498a8fe5;
   }
 
+  .head-pad{
+    padding: 50px 0;
+  }
+
   .title-style{
-      color: rgb(134, 183, 196);
+    color: rgb(134, 183, 196);
   }
 /* Button styles*/
 
@@ -79,3 +82,5 @@ nav ul li a:hover{
   .btn:hover {
 background-color: rgb(134, 183, 196) !important;
   }
+
+  
