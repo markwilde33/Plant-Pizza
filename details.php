@@ -29,20 +29,24 @@
 	
 	<?php include('templates/header.php'); ?>
     <div class="container center">
-    <h4 class="center pizza-details"> <strong> Pizza Details Page</strong></h4> 
+    <h4 class="center pizza-details head-pad"> <strong> Pizza Details Page</strong></h4> 
     <?php if($pizza): ?>
-
-        <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
-        <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
-        <p><?php echo date($pizza['created_at']); ?></p>
-        <h5>Ingredients:</h5>
-        <ul>
-            <?php foreach(explode(',', $pizza['ingredients']) as $ing):?>
-                <li>
-                    <?php echo htmlspecialchars($ing); ?> 
-                </li>
-            <?php endforeach; ?>
-         </ul>
+      <div class="card z-depth-0">
+				<div class="card-content center">
+          <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
+          <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
+         <p><?php echo date($pizza['created_at']); ?></p>
+         <h5>Ingredients:</h5>
+         <ul>
+           <?php foreach(explode(',', $pizza['ingredients']) as $ing):?>
+            <li>
+             <?php echo htmlspecialchars($ing); ?> 
+            </li>
+           <?php endforeach; ?>
+         </ul>             
+        </div>
+    </div>
+       
     <?php else: ?>
        <h4><strong>Pizza not found, when you know better, do better</strong></h4>
        <div><a href="index.php" class="btn brand z-depth-0">Go Back</a></div>
