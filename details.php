@@ -50,12 +50,13 @@
     <h4 class="center pizza-details head-pad"> <strong> Pizza Details Page</strong></h4> 
     <?php if($pizza): ?>
       <div class="card z-depth-0">
+        <img src="img/pizza.svg" alt="pizza" class="pizza">
 			 <div class="card-content center">
-        <h4><?php echo htmlspecialchars($pizza['title']); ?></h4>
-        <p><strong>Created by: </strong><?php echo htmlspecialchars($pizza['username']); ?></p>
-        <p><?php echo date($pizza['created_at']); ?></p>
-        <h5>Ingredients:</h5>
-        <ul>
+        <h4 class="blue-text text-lighten-3"><?php echo htmlspecialchars($pizza['title']); ?></h4>
+        <p class="grey-text text-darken-3"><strong>Created by: </strong><span class="grey-text text-darken-1"><?php echo htmlspecialchars($pizza['username']); ?></span></p>
+        <p class="grey-text text-darken-1"><?php echo date($pizza['created_at']); ?></p>
+        <h5 class="blue-text text-lighten-3">Ingredients:</h5>
+        <ul class="grey-text text-darken-1">
           <?php foreach(explode(',', $pizza['ingredients']) as $ing):?>
           <li>
            <?php echo htmlspecialchars($ing); ?> 
