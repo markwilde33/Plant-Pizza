@@ -10,6 +10,8 @@
   //   unset($_SESSION['name']);
   // }
 
+   // Use Null Coalescing so that id the session variable doesn't exist 'Guest' will be outputted in it's place and no erroe will be shown in the browser
+  //  $name = $_SESSION['name'] ?? 'Guest';
 
 
   // access the stored name in the session super global by setting it to a variable
