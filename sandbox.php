@@ -33,8 +33,13 @@ echo $score > 40 ? 'high score!' : 'low score!';
 
 	// $_COOKIE, $_SESSION
 
-  // sessions, use isset to check if user has submitted the form
+  // sessions and cookies, use isset to check if user has submitted the form
   if(isset($_POST['submit'])){
+
+    // cookie for gender
+    setcookie('gender', $_POST['gender'], time() + 86400);
+
+
     // use the session_start function to start a session
     session_start();
     // use the $_SESSION super global to store the variable 'name' and set it equal to the 'name' submitted in the form
@@ -65,6 +70,10 @@ echo $score > 40 ? 'high score!' : 'low score!';
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">   
     <label for="name">enter your name</label>
     <input type="text" name="name">
+    <select name="gender">
+			<option value="male">male</option>
+			<option value="female">female</option>
+		</select>
     <input type="submit" name="submit" value="submit">
   </form>
 

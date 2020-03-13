@@ -10,12 +10,16 @@
   //   unset($_SESSION['name']);
   // }
 
-   // Use Null Coalescing so that id the session variable doesn't exist 'Guest' will be outputted in it's place and no erroe will be shown in the browser
+   // Use Null Coalescing so that if the session variable doesn't exist 'Guest' will be outputted in it's place and no error will be shown in the browser
   //  $name = $_SESSION['name'] ?? 'Guest';
 
 
   // access the stored name in the session super global by setting it to a variable
   $name = $_SESSION['name'];
+
+  // access the stored name in the cookie super global by setting it to a variable, if the cookie variable doesn't exist 'Robot' will be outputted in it's place 
+  $gender = $_COOKIE['gender'] ?? 'Robot';
+
 
   
 
@@ -36,6 +40,7 @@
       <ul id="nav-mobile" class="right ">
         <!-- output the stored session name -->
         <li class="red-text text-lighten-3"><strong>Aye up, <?php echo htmlspecialchars($name); ?></strong></li>
+        <li class="red-text text-lighten-3"><strong>(<?php echo htmlspecialchars($gender); ?>)</strong></li>
         <li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
       </ul>
     </div>
